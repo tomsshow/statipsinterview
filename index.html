@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Cumulative Binomial Probabilities | STAT 414 / 415</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="prev" href="../68/" />
+    <link rel="up" href="../53/" />
+    <link rel="next" href="../70/" />
+    <link rel="shortcut icon" href="./misc/online_ed2_favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" media="all" href="./modules/book/book/index.css?N" />
+    <link type="text/css" rel="stylesheet" media="all" href="./modules/node/node/index.css?N" />
+    <link type="text/css" rel="stylesheet" media="all" href="./modules/system/defaults/index.css?N" />
+    <link type="text/css" rel="stylesheet" media="all" href="./modules/system/system/index.css?N" />
+    <link type="text/css" rel="stylesheet" media="all" href="./modules/system/system-menus/index.css?N" />
+
+    <link type="text/css" rel="stylesheet" media="all" href="./sites/all/themes/online_ed2/css/default/index.css?N" />
+    <link type="text/css" rel="stylesheet" media="all" href="./sites/all/themes/online_ed2/css/layout/index.css?N" />
+    <link type="text/css" rel="stylesheet" media="all" href="./sites/all/themes/online_ed2/css/style/index.css?N" />
+
+    <link type="text/css" rel="stylesheet" media="screen" href="./sites/all/themes/online_ed2/css/tabs/index.css?N" />
+    <link type="text/css" rel="stylesheet" media="print" href="./sites/all/themes/online_ed2/css/print/index.css?N" />
+    <!--[if lte IE 6]><link type="text/css" rel="stylesheet" media="all" href="/stat414/sites/all/themes/online_ed2/css/ie6.css" /><![endif]-->
+    <!--[if IE 7]><link type="text/css" rel="stylesheet" media="all" href="/stat414/sites/all/themes/online_ed2/css/ie7.css" /><![endif]-->
+    <!--[if IE 8]><link type="text/css" rel="stylesheet" media="all" href="/stat414/sites/all/themes/online_ed2/css/ie8.css" /><![endif]-->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('iframe').each(function() {
+                var url = $(this).attr("src");
+                var char = "?";
+                if (url.indexOf("?") != -1) {
+                    var char = "&";
+                }
+                $(this).attr("src", url + char + "wmode=transparent");
+            });
+        });
+    </script>
+    <link href="https://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/4.12/video.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]],processEscapes: true}});</script>
+</head>
+
+<body class="not-front not-logged-in page-node node-type-book one-sidebar sidebar-left page-node-69 section-node">
+    <div id="skip">
+        <a href="#content">Skip to Content</a>
+    </div>
+    <div id="page" class="stat">
+        <!-- ______________________ HEADER _______________________ -->
+        <div id="header">
+            <div id="logo-title">
+                <div id="logo-logo">
+                    <a href="https://science.psu.edu/" title="Eberly College of Science" rel="home" id="logo">Eberly College of Science</a>
+                </div>
+                <div id="site-name">
+                    <a href="#" title="Home" rel="home"><span>STAT 414 / 415</span></a>
+                </div>
+                <div id="site-slogan"><span>Probability Theory and Mathematical Statistics</span></div>
+            </div>
+            <!-- /logo-title -->
+        </div>
+        <!-- /header -->
+        <!-- ______________________ MAIN _______________________ -->
+        <div id="main" class="clearfix">
+            <div id="content">
+                <div id="content-inner" class="inner column center">
+                    <div id="content-header">
+                        <div class="breadcrumb"><a href="#">Home</a> » <a href="#">Lesson 10: The Binomial Distribution</a></div>
+                        <h1 class="title">Cumulative Binomial Probabilities</h1>
+                    </div>
+                    <!-- /#content-header -->
+                    <div id="content-area">
+                        <div class="node node clearfix node-type-book" id="node-69">
+                            <div class="node-inner">
+                                <div class="content">
+                                    <h3><img style="float: right;" src="./files/lesson10/healthinsurance.jpg" alt="medical symbol" width="250" height="250">Example</h3>
+                                    <p>By some estimates, twenty-percent (20%) of Americans have no health insurance. Randomly sample <em>n</em> = 15 Americans. Let <em>X</em> denote the number in the sample with no health insurance.&nbsp;What is the probability that exactly 3 of the 15 sampled have no health insurance?</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p><strong>Solution.</strong>&nbsp;Since <em>n</em> = 15 is small relative to the population of <em>N</em> = 300,000,000 Americans, and all of the other criteria pass muster (two possible outcomes, independent trials, ....), the random variable <em>X</em> can be assumed to follow a binomial distribution with <em>n</em> = 15 and <em>p</em> = 0.20.&nbsp;Using the probability mass function for a binomial random variable, the calculation is then relatively straightforward:</p>
+                                        <p style="text-align: center;"><span style="color: #ff0000;"><span style="color: #000000;">\(P(X=3)=\dbinom{15}{3}(0.20)^3 (0.80)^{12}=0.25\)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                                            <br>
+                                            </span>
+                                        </p>
+                                        <p style="text-align: left;">That is, there is a 25% chance, in sampling 15 random Americans, that we would find exactly 3 that had no health insurance.</p>
+                                    </div>
+                                    <h3>An Aside On Cumulative Probability Distributions</h3>
+                                    <table style="width: 95%;" border="4" align="center" bordercolor="#133cac">
+                                        <tbody>
+                                            <tr>
+                                                <td style="margin: 8px; padding: 0.3em 0.5em; color: #000000; font: 1em serif; cursor: text;">
+                                                    <p><strong>Definition.&nbsp;</strong>The function:</p>
+                                                    <p style="text-align: center;"><em>F</em>(<em>x</em>) = <em>P</em>(<em>X</em> ≤ <em>x</em>)</p>
+                                                    <p>is called a <strong>cumulative probability distribution</strong>. For a discrete random variable <em>X</em>, the cumulative probability distribution <em>F</em>(<em>x</em>) is determined by:</p>
+                                                    <p style="text-align: center;"><span style="color: #ff0000;"><span style="color: #000000;">\(F(x)=\sum\limits_{m=0}^x f(m)=f(0)+f(1)+\cdots+f(x)\)</span>
+                                                        <br>
+                                                        </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p>You'll first want to note that the probability mass function, <em>f</em>(<em>x</em>), of a discrete random variable <em>X</em> is distinguished from the cumulative probability distribution, <em>F</em>(<em>x</em>), of a discrete random variable <em>X</em> by the use of a lowercase <em>f</em> and an uppercase <em>F</em>. That is, the notation <em>f</em>(3) means <span style="white-space: nowrap;"><em>P</em>(<em>X&nbsp;</em>= 3),</span> while the notation <em>F</em>(3) means <span style="white-space: nowrap;"><em>P</em>(<em>X</em> ≤ 3)</span>.</p>
+                                    <p>Now the standard procedure is to report probabilities for a particular distribution as cumulative probabilities, whether in statistical software such as Minitab, a TI-80-something calculator, or in a table like Table II in the back of your textbook. If you take a look at the table, you'll see that it goes on for five pages. &nbsp;Let's just take a look at the top of the first page of the table in order to get a feel for how the table works:</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p style="text-align: center;">
+                                            <iframe width="532" height="474" src="https://www.youtube.com/embed/rMnxxD7XeBk?rel=0" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe>
+                                        </p>
+                                    </div>
+                                    <p>In summary, to use the table in the back of your textbook, as well as that found in the back of most probability textbooks, to find cumulative binomial probabilities, do the following:</p>
+                                    <ol>
+                                        <li>Find <em><strong>n</strong><span style="font-style: normal;">, the number in the sample,</span></em>&nbsp;in the first column on the left.</li>
+                                        <li>Find the column containing <em><strong>p</strong><span style="font-style: normal;">, the probability of success</span></em>.</li>
+                                        <li>Find the <em><strong>x</strong></em> in the second column on the left for which you want to find <em>F</em>(<em>x</em>) = <span style="white-space: nowrap;"><em>P</em>(<em>X</em> ≤ <em>x</em>).</span></li>
+                                    </ol>
+                                    <p>Let's try it out on our health insurance example.</p>
+                                    <h3 style="font-size: 1.17em;"><img style="float: right;" src="./files/lesson10/healthinsurance.jpg" alt="medical symbol" width="250" height="250">Example</h3>
+                                    <p style="font: 1em/1.4 serif; padding: 12px 4px; margin: 0px;">Again, by some estimates, twenty-percent (20%) of Americans have no health insurance. Randomly sample&nbsp;<em>n</em>&nbsp;= 15 Americans. Let&nbsp;<em>X</em>&nbsp;denote the number in the sample with no health insurance. Use the cumulative binomial probability table in the back of your book to find the probability that&nbsp;<strong>at most 1</strong> of the 15 sampled has no health insurance.</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p><strong>Solution.</strong> The probability that at most 1 has no health insurance can be written as <span style="white-space: nowrap;"><em>P</em>(<em>X</em> ≤ 1).</span> To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 1)&nbsp;</span>using the binomial table, we:&nbsp;</p>
+                                        <ol>
+                                            <li>Find&nbsp;<em><strong>n&nbsp;</strong><strong><span style="font-style: normal;">= 15</span></strong></em>&nbsp;in the first column on the left.</li>
+                                            <li>Find the column containing&nbsp;<em><strong>p <span style="font-style: normal;">= 0.20</span></strong></em>.</li>
+                                            <li>Find the <strong>1</strong>&nbsp;in the second column on the left, since we want to find <em>F</em>(1) =&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 1).</span></li>
+                                        </ol>
+                                        <p>Now, all we need to do is read the probability value where the <em>p</em> = 0.20 column and the (<em>n</em> = 15, <em>x</em> = 1) row intersect. What do you get?</p>
+                                        <p style="text-align: center;"><img src="./files/lesson10/MediumBinomTable_N15P20.gif" alt="Binomial Table with n = 15 p = 0.20" width="300" height="341"></p>
+                                        <p style="text-align: center;"><a class="thickbox" title=" " href="./files/lesson10/BinTable_N15P20_AtMost1.gif">Do you need a hint?</a></p>
+                                        <p>We've used the cumulative binomial probability table to determine that the probability that at most 1 of the 15 sampled has no health insurance is 0.1671. For kicks, since it wouldn't take a lot of work in this case, you might want to verify that you'd get the same answer using the binomial p.m.f.</p>
+                                    </div>
+                                    <p>What is the probability that <strong>more than 7</strong> have no health insurance?</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p style="text-align: left;"><strong>Solution.</strong>&nbsp;As we determined previously, we can&nbsp;calculate&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;&gt; 7)</span>&nbsp;by finding&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7)&nbsp;</span>and subtracting it from 1:</p>
+                                        <p style="text-align: center;"><img src="./files/lesson10/BinProb_X_morethan_7.gif" alt="More than 7" width="605" height="215"></p>
+                                        <p>The good news is that the cumulative binomial probability table makes it easy to determine&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7).&nbsp;<span style="white-space: normal;">To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7)&nbsp;</span>using the binomial table, we:&nbsp;</span>
+                                            </span>
+                                        </p>
+                                        <ol>
+                                            <li>Find&nbsp;<em><strong>n&nbsp;</strong><strong><span style="font-style: normal;">= 15</span></strong></em>&nbsp;in the first column on the left.</li>
+                                            <li>Find the column containing&nbsp;<em><strong>p&nbsp;<span style="font-style: normal;">= 0.20</span></strong></em>.</li>
+                                            <li>Find the&nbsp;<strong>7</strong>&nbsp;in the second column on the left, since we want to find&nbsp;<em>F</em>(7) =&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7).</span></li>
+                                        </ol>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">Now, all we need to do is read the probability value where the&nbsp;<em>p</em>&nbsp;= 0.20 column and the (<em>n</em>&nbsp;= 15,&nbsp;<em>x</em>&nbsp;= 7) row intersect. What do you get?</p>
+                                        <p style="text-align: center;"><img src="./files/lesson10/MediumBinomTable_N15P20.gif" alt="Binomial Table with n = 15 p = 0.20" width="300" height="341"></p>
+                                        <p style="text-align: center;"><a class="thickbox" title=" " href="./files/lesson10/BinTable_N15P20_AtMost7.gif">Do you need a hint?</a></p>
+                                        <p>The cumulative binomial probability table tells us that&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7)&nbsp;</span>= 0.9958. Therefore:</p>
+                                        <p style="text-align: center;"><em>P</em>(<em>X</em> &gt; 7) = 1 −&nbsp;0.9958 = 0.0042</p>
+                                        <p>That is, the probability that&nbsp;more than 7&nbsp;in a random sample of 15 would have no health insurance is 0.0042.</p>
+                                    </div>
+                                    <p>What is the probability that <strong>exactly 3</strong> have no health insurance?</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p style="text-align: left;"><strong>Solution.</strong>&nbsp;We can&nbsp;calculate&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;= 3)</span>&nbsp;by finding&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 2)&nbsp;</span>and subtracting it from&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 3)</span>, as illustrated here:</p>
+                                        <p style="text-align: center;"><img src="./files/lesson10/BinProbX_Equals_3.gif" alt="Probability exactly 3" width="325" height="186"></p>
+                                        <p><span style="line-height: normal;">&nbsp;<span style="line-height: 22px;">To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 2) and&nbsp;<em>P</em>(<em>X</em>&nbsp;≤ 3)&nbsp;<span style="white-space: normal;">using the binomial table, we:&nbsp;</span></span>
+                                            </span>
+                                            </span>
+                                        </p>
+                                        <ol>
+                                            <li>Find&nbsp;<em><strong>n&nbsp;</strong><strong><span style="font-style: normal;">= 15</span></strong></em>&nbsp;in the first column on the left.</li>
+                                            <li>Find the column containing&nbsp;<em><strong>p&nbsp;<span style="font-style: normal;">= 0.20</span></strong></em>.</li>
+                                            <li>Find the <strong>3</strong>&nbsp;in the second column on the left, since we want to find&nbsp;<em>F</em>(3) =&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 3). And, find th<span style="white-space: normal;">e&nbsp;<strong>2</strong>&nbsp;in the second column on the left, since we want to find&nbsp;<em>F</em>(2) =&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 2).</span></span>
+                                                </span>
+                                            </li>
+                                        </ol>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">Now, all we need to do is (1) read the probability value where the&nbsp;<em>p</em>&nbsp;= 0.20 column and the (<em>n</em>&nbsp;= 15,&nbsp;<em>x</em>&nbsp;= 3) row intersect, and (2)&nbsp;read the probability value where the&nbsp;<em>p</em>&nbsp;= 0.20 column and the (<em>n</em>&nbsp;= 15,&nbsp;<em>x</em>&nbsp;= 2) row intersect. What do you get?</p>
+                                        <p style="text-align: center;"><img src="./files/lesson10/MediumBinomTable_N15P20.gif" alt="Binomial Table with n = 15 p = 0.20" width="300" height="341"></p>
+                                        <p style="text-align: center;"><a class="thickbox" title=" " href="./files/lesson10/BinTable_N15P20_Exactly3.gif">Do you need a hint?</a></p>
+                                        <p><span style="line-height: normal;">&nbsp;<span style="line-height: 22px;">The cumulative binomial probability table tells us that&nbsp;finding&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 3)&nbsp;</span>= 0.6482 and&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 2)&nbsp;</span>= 0.3980. Therefore:</span>
+                                            </span>
+                                        </p>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; text-align: center; margin: 0px;"><em>P</em>(<em>X</em>&nbsp;= 3) =&nbsp;<em>P</em>(<em>X</em>&nbsp;≤&nbsp;3) −&nbsp;<em>P</em>(<em>X</em>&nbsp;≤ 2)&nbsp;= 0.6482 − 0.3980&nbsp;= 0.2502</p>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">That is, there is about a 25% chance that&nbsp;exactly 3 people in a random sample of 15 would have no health insurance. Again, for kicks, since it wouldn't take a lot of work in this case, you might want to verify that you'd get the same answer using the binomial p.m.f.</p>
+                                    </div>
+                                    <p>What is the probability that <strong>at least 1</strong> has no health insurance?</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p><strong>Solution.</strong> We can&nbsp;calculate&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≥&nbsp;1)</span>&nbsp;by finding&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 0)&nbsp;</span>and subtracting it from 1, as illustrated here:</p>
+                                        <p style="text-align: center;"><img src="./files/lesson10/BinProb_X_AtLeast_1.gif" alt="Probability at least 1" width="463" height="166"></p>
+                                        <p><span style="line-height: normal;">&nbsp;<span style="line-height: 22px;">To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 0)&nbsp;</span>using the binomial table, we:&nbsp;</span>
+                                            </span>
+                                        </p>
+                                        <ol>
+                                            <li>Find&nbsp;<em><strong>n&nbsp;</strong><strong><span style="font-style: normal;">= 15</span></strong></em>&nbsp;in the first column on the left.</li>
+                                            <li>Find the column containing&nbsp;<em><strong>p&nbsp;<span style="font-style: normal;">= 0.20</span></strong></em>.</li>
+                                            <li>Find the <strong>0</strong>&nbsp;in the second column on the left, since we want to find&nbsp;<em>F</em>(0) =&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 0).</span></li>
+                                        </ol>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">Now, all we need to do is read the probability value where the&nbsp;<em>p</em>&nbsp;= 0.20 column and the (<em>n</em>&nbsp;= 15,&nbsp;<em>x</em>&nbsp;= 0) row intersect. What do you get?</p>
+                                        <p style="text-align: center;"><img src="./files/lesson10/MediumBinomTable_N15P20.gif" alt="Binomial Table with n = 15 p = 0.20" width="300" height="341"></p>
+                                        <p style="text-align: center;"><a class="thickbox" title=" " href="./files/lesson10/BinTable_N15P20_AtMost0.gif">Do you need a hint?</a></p>
+                                        <p><span style="line-height: normal;"><span style="line-height: 22px;">The cumulative binomial probability table tells us that&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 0)&nbsp;</span>= 0.0352. Therefore:</span>
+                                            </span>
+                                        </p>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; text-align: center; margin: 0px;"><em>P</em>(<em>X</em>&nbsp;≥&nbsp;1) = 1 −&nbsp;0.0352 = 0.9648</p>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">That is, the probability that&nbsp;at least one person in a random sample of 15 would have no health insurance is 0.9648.</p>
+                                    </div>
+                                    <p>What is the probability that <strong>fewer than 5</strong> have no health insurance?</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p><strong>Solution.</strong>&nbsp;"Fewer than 5" means 0, 1, 2, 3, or 4. That is,&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;&lt; 5)&nbsp;</span>=&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 4)</span>, and&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 4)&nbsp;<span style="white-space: normal;">can be readily found using the cumulative binomial table. To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 4)</span>, we:&nbsp;</span>
+                                            </span>
+                                        </p>
+                                        <ol>
+                                            <li>Find&nbsp;<em><strong>n&nbsp;</strong><strong><span style="font-style: normal;">= 15</span></strong></em>&nbsp;in the first column on the left.</li>
+                                            <li>Find the column containing&nbsp;<em><strong>p&nbsp;<span style="font-style: normal;">= 0.20</span></strong></em>.</li>
+                                            <li>Find the <strong>4</strong>&nbsp;in the second column on the left, since we want to find&nbsp;<em>F</em>(4) =&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 4).</span></li>
+                                        </ol>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">Now, all we need to do is read the probability value where the&nbsp;<em>p</em>&nbsp;= 0.20 column and the (<em>n</em>&nbsp;= 15,&nbsp;<em>x</em>&nbsp;= 4) row intersect. What do you get?</p>
+                                        <p style="text-align: center;"><img src="./files/lesson10/MediumBinomTable_N15P20.gif" alt="Binomial Table with n = 15 p = 0.20" width="300" height="341"></p>
+                                        <p style="text-align: center;"><a class="thickbox" title=" " href="./files/lesson10/BinTable_N15P20_AtMost4.gif">Do you need a hint?</a></p>
+                                        <p>The cumulative binomial probability table tells us that&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 4)&nbsp;</span>= 0.8358.&nbsp;That is, the probability that&nbsp;fewer than 5 people in a random sample of 15 would have no health insurance is 0.8358.</p>
+                                    </div>
+                                    <p>We have now taken a look at an example involving all of the possible scenarios... <strong>at most </strong><em><strong>x</strong></em>, <strong>more than </strong><em><strong>x</strong></em>, <strong>exactly </strong><em><strong>x</strong></em>, <strong>at least </strong><em><strong>x</strong></em>, and <strong>f</strong><strong>ewer than </strong><em><strong>x</strong></em>... of the kinds of binomial probabilities that you might need to find. Oops! <img title="Surprised" src="./sites/all/libraries/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-surprised/index.gif" border="0" alt="Surprised">&nbsp;Have you noticed that <em>p</em>, the probability of success, in the binomial table in the back of the book only goes up to 0.50. What happens if your <em>p</em> equals 0.60 or 0.70? All you need to do in that case is turn the problem on its head! For example, suppose you have <em>n</em> = 10 and <em>p</em> = 0.60, and you are looking for the probability of at most 3 successes. Just change the definition of a success into a failure, and vice versa! That is, finding the probability of at most 3 successes is equivalent to 7 or more failures with the probability of a failure being 0.40. Shall we make this more concrete by looking at a specific example?</p>
+                                    <h3><img style="float: right;" src="./files/lesson10/electricmeter.jpg" alt="electric meter" width="300" height="225">Example</h3>
+                                    <p>Many utility companies promote energy conservation by offering discount rates to consumers who keep their energy usage below certain established subsidy standards. A recent EPA report notes that 70% of the island residents of Puerto Rico have reduced their electricity usage sufficiently to qualify for discounted rates. If ten residential subscribers are randomly selected from San Juan, Puerto Rico, what is the probability that at least four qualify for the favorable rates?</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p><strong>Solution.</strong> If we let <em>X</em> denote the number of subscribers who qualify for favorable rates, then <em>X</em> is a binomial random variable with <em>n</em> = 10 and <em>p</em> = 0.70. And, if we let <em>Y</em> denote the number of subscribers who don't qualify for favorable rates, then <em>Y</em>, which equals <span style="white=space: nowrap;">10 −&nbsp;<em>X</em>,</span> is a binomial random variable with <em>n</em> = 10 and <em>q</em> = <span style="white=space: nowrap;">1 − <em>p</em></span> = 0.30. We are interested in finding <span style="white=space: nowrap;"><em>P</em>(<em>X</em> ≥ 4).</span> We can't use the cumulative binomial tables, because they only go up to <em>p</em> = 0.50. The good news is that we can rewrite&nbsp;<em>P</em>(<em>X</em>&nbsp;≥ 4) as a probability statement in terms of <em>Y</em>:</p>
+                                        <p style="text-align: center;"><em>P</em>(<em>X</em> ≥ 4) = <em>P</em>(−<em>X</em> ≤ −4) = <em>P</em>(10 − <em>X</em> ≤ 10 − 4) = <em>P</em>(<em>Y</em> ≤ 6)</p>
+                                        <p style="text-align: left;">Now it's just a matter of looking up the probability in the right place on our cumulative binomial table.&nbsp;To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>Y</em>&nbsp;≤ 6)</span>, we:&nbsp;</p>
+                                        <ol>
+                                            <li>Find&nbsp;<em><strong>n&nbsp;</strong><strong><span style="font-style: normal;">= 10</span></strong></em>&nbsp;in the first column on the left.</li>
+                                            <li>Find the column containing&nbsp;<em><strong>p&nbsp;<span style="font-style: normal;">= 0.30</span></strong></em>.</li>
+                                            <li>Find the&nbsp;<strong>6</strong>&nbsp;in the second column on the left, since we want to find&nbsp;<em>F</em>(6) =&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>Y</em>&nbsp;≤ 6).</span></li>
+                                        </ol>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">Now, all we need to do is read the probability value where the&nbsp;<em>p</em>&nbsp;= 0.30 column and the (<em>n</em>&nbsp;= 10, <em>y</em>&nbsp;= 6) row intersect.&nbsp;What do you get?</p>
+                                        <p style="text-align: center;"><img src="./files/lesson10/MediumBinomTable_N10P30.gif" alt="Binomial table with n = 10 and p = 0.30" width="300" height="421"></p>
+                                        <p style="text-align: center;"><a class="thickbox" style="color: #027ac6; text-decoration: none;" title=" " href="./files/lesson10/BinTable_N10P30_AtMost6.gif">Do you need a hint?</a></p>
+                                        <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">The cumulative binomial probability table tells us that&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>Y</em>&nbsp;≤ 6)&nbsp;</span>=&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≥ 4)</span> = 0.9894.&nbsp;That is, the probability that at least four people in a random sample of ten would qualify for favorable rates is 0.9894.</p>
+                                    </div>
+                                    <p>If you are in need of calculating binomial probabilities for more specific probabilities of success (<em>p</em>), such as 0.37 or 0.61, you can use statistical software, such as Minitab, to determine the cumulative binomial probabilities. You can then still use the methods illustrated here on this page to find the specific probabilities (more than <em>x</em>, fewer than <em>x</em>, ...) that you need.</p>
+                                    <div id="book-navigation-53" class="book-navigation">
+                                        <div class="page-links clear-block">
+                                            <a href="#" class="page-previous" title="Go to previous page">‹ Is X Binomial?</a>
+                                            <a href="#" class="page-up" title="Go to parent page">up</a>
+                                            <a href="#" class="page-next" title="Go to next page">Effect of n and p on Shape ›</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /node-inner -->
+                        </div>
+                        <!-- /node-->
+                    </div>
+                    <!-- /#content-area -->
+                </div>
+            </div>
+            <!-- /content-inner /content -->
+            <div id="sidebar-first" class="column sidebar first">
+                <div id="sidebar-first-inner" class="inner">
+                    <h1 id="menu_title">Navigation</h1>
+                    <div id="block-user-1" class="block block-user block-left block-id-58 clearfix first odd">
+                        <div class="block-inner">
+                            <h3 class="title block-title">Start Here!</h3>
+                            <div class="content">
+                                <ul class="menu">
+                                    <li class="collapsed first welcome-"><a href="#" title="Welcome to STAT 414!">Welcome!</a></li>
+                                    <li class="leaf search_course_materials"><a href="#" title="">Search Course Materials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /block-inner -->
+                    </div>
+                    <!-- /block -->
+                    <div id="block-menu-menu-lessons" class="block block-menu block-left block-id-47 clearfix even">
+                        <div class="block-inner">
+                            <h3 class="title block-title">STAT 414 Intro Probability Theory</h3>
+                            <div class="content">
+                                <ul class="menu">
+                                    <li class="leaf first introduction_to_stat_414"><a href="#" title="Introduction to STAT 414!">Introduction to STAT 414</a></li>
+                                    <li class="collapsed section_1-_introduction_to_probability"><a href="#" title="Section 1: Introduction to Probability">Section 1: Introduction to Probability</a></li>
+                                    <li class="expanded active-trail section_2-__discrete_distributions"><a href="#" title="Section 2:  Discrete Distributions">Section 2:  Discrete Distributions</a>
+                                        <ul class="menu">
+                                            <li class="collapsed first lesson_7-_discrete_random_variables"><a href="#" title="Lesson 7: Discrete Random Variables">Lesson 7: Discrete Random Variables</a></li>
+                                            <li class="collapsed lesson_8-_mathematical_expectation"><a href="#" title="Lesson 8: Expectations">Lesson 8: Mathematical Expectation</a></li>
+                                            <li class="collapsed lesson_9-_moment_generating_functions"><a href="#" title="Lesson 9: Moment Generating Functions">Lesson 9: Moment Generating Functions</a></li>
+                                            <li class="expanded active-trail lesson_10-_the_binomial_distribution"><a href="#" title="Lesson 10: The Binomial Distribution">Lesson 10: The Binomial Distribution</a>
+                                                <ul class="menu">
+                                                    <li class="leaf first the_probability_mass_function"><a href="#" title="The Probability Mass Function">The Probability Mass Function</a></li>
+                                                    <li class="leaf is_x_binomial-"><a href="#" title="Is X Binomial?">Is X Binomial?</a></li>
+                                                    <li class="leaf active-trail cumulative_binomial_probabilities"><a href="" title="Cumulative Binomial Probabilities" class="active">Cumulative Binomial Probabilities</a></li>
+                                                    <li class="leaf effect_of_n_and_p_on_shape"><a href="#" title="Effect of n and p on Shape">Effect of n and p on Shape</a></li>
+                                                    <li class="leaf last the_mean_and_variance"><a href="#" title="The Mean and Variance">The Mean and Variance</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="collapsed lesson_11-_geometric_and_negative_binomial_distributions"><a href="#" title="Lesson 12: The Poisson Process">Lesson 11: Geometric and Negative Binomial Distributions</a></li>
+                                            <li class="collapsed last lesson_12-_the_poisson_distribution"><a href="../54/" title="Lesson 11: The Poisson Distribution">Lesson 12: The Poisson Distribution</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="collapsed section_3-_continuous_distributions"><a href="#" title="Section 3: Continuous Distributions">Section 3: Continuous Distributions</a></li>
+                                    <li class="collapsed section_4-_bivariate_distributions"><a href="#" title="Section 4: Bivariate Distributions">Section 4: Bivariate Distributions</a></li>
+                                    <li class="collapsed last section_5-_distributions_of_functions_of_random_variables"><a href="#" title="Section 5: Distributions of Functions of Random Variables">Section 5: Distributions of Functions of Random Variables</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /block-inner -->
+                    </div>
+                    <!-- /block -->
+                    <div id="block-menu-menu-lessons-415" class="block block-menu block-left block-id-48 clearfix last odd">
+                        <div class="block-inner">
+                            <h3 class="title block-title">STAT 415 Intro Mathematical Statistics</h3>
+                            <div class="content">
+                                <ul class="menu">
+                                    <li class="leaf first introduction_to_stat_415"><a href="#" title="Introduction to STAT 415 Materials">Introduction to STAT 415</a></li>
+                                    <li class="collapsed section_6-_estimation"><a href="#" title="Section 6: Estimation">Section 6: Estimation</a></li>
+                                    <li class="collapsed section_7-_hypothesis_testing"><a href="#" title="Section 7: Hypothesis Testing">Section 7: Hypothesis Testing</a></li>
+                                    <li class="collapsed section_8-_nonparametric_methods"><a href="#" title="Section 8: Nonparametric Methods">Section 8: Nonparametric Methods</a></li>
+                                    <li class="collapsed section_9-_bayesian_methods"><a href="#" title="Section 9: Bayesian Methods">Section 9: Bayesian Methods</a></li>
+                                    <li class="collapsed last section_10-_more_theory_-amp-_practice"><a href="#" title="Section 10: More Theory &amp; Practice">Section 10: More Theory &amp; Practice</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /block-inner -->
+                    </div>
+                    <!-- /block -->
+                    <div id="sciencemark">
+                        <a href="https://science.psu.edu/" title="Penn State Science">
+                            <img src="./sites/all/themes/online_ed2/images/pennstatescience250/index.png" alt="Penn State Science" />
+                        </a>
+                    </div>
+                    <div id="readytoenroll">
+                        <a href="https://www.worldcampus.psu.edu/course-catalog/search-courses" title="Course Catalog">
+                            <img src="./sites/all/themes/online_ed2/images/readytoenroll250/index.png" alt="Ready to Enroll?" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /sidebar-left -->
+            <!-- /sidebar-second -->
+        </div>
+        <!-- /main -->
+        <!-- ______________________ FOOTER _______________________ -->
+        <div id="footer">
+            <p>Copyright &#169; 2018 <a href="https://www.psu.edu/">The Pennsylvania State University</a>
+                <br />
+                <a href="https://www.psu.edu/ur/legal.html">Privacy and Legal Statements</a>
+                <br /> Contact the <a href="mailto:jmh491@psu.edu">Department of Statistics Online Programs</a>
+            </p>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML" async></script>
+</body>
+</html>
