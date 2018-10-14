@@ -99,30 +99,35 @@
                                         <p><strong>Solution.</strong>&nbsp;&quot;At most one&quot; means either 0 or 1 of those sampled have no health insurance. That is, we need to find:<p>
                                         <p style="text-align: center;">
                                             <span style="white-space: nowrap">
-                                                <em>P</em>"("<em>X&nbsp;</em> "≤ 1)"
-                                            </span>
-                                            " = "
+                                                <em>P</em>(<em>X&nbsp;</em> ≤ 1)
+                                            </span> = 
                                             <span style="white-space: nowrap">
-                                                    <em>P</em>"("<em>X</em> "= 0)"
-                                            </span>
-                                            " + "
+                                                    <em>P</em> ( <em>X</em>  = 0)
+                                            </span> + 
                                             <span style="white-space: nowrap">
-                                                    <em>P</em>"("<em>X&nbsp;</em> "= 1)"
-                                            </span>
-                                            "&nbsp;"
+                                                    <em>P</em>(<em>X&nbsp;</em> = 1)
+                                            </span>&nbsp;
                                         </p>
                                         <p>
                                             Using the probability mass function for a binomial random variable with n = 15 and p = 0.20, we have:   
                                         </p>
-                                        <p style="text-align: center;"><span style="color: #ff0000;"><span style="color: #000000;">P(X \leq 1)=\dbinom{15}{0}(0.2)^0 (0.8)^{15}+ \dbinom{15}{1}(0.2)^1(0.8)^{14}=0.0352+0.1319=0.167</p>
+                                        <p style="text-align: center;"><span style="color: #ff0000;"><span style="color: #000000;">\(P(X \leq 1)=\dbinom{15}{0}(0.2)^0 (0.8)^{15}+ \dbinom{15}{1}(0.2)^1(0.8)^{14}=0.0352+0.1319=0.167\)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                                            <br>
+                                            </span>
+                                        </p>
                                         <p>That is, we have a 16.7% chance, in sampling 15 random Americans, that we would find at most one that had no health insurance.</p>       
                                     </div>
                                     <p>What is the probability that more than seven have no health insurance?</p>
                                     <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
                                         <p><strong>Solution.</strong>&nbsp; Solution. Yikes! &quot;More than seven&quot; in the sample means 8, 9, 10, 11, 12, 13, 14, 15. As the
-                                            following picture ilustrates, there are two ways that we can calculate <em>P</em> "(" <em>X</em> " > 7):"</p>
-                                            <p><strong>PLACE HOLDER IMAGE HERE</strong></p>
-                                            <p>We could calculate P(X > 7) by adding up P(X = 8), P(X = 9), up to P(X = 15). Alternatively, we could calculate P(X > 7) by finding P(X ≤ 7) and subtracting it from 1. But to find P(X ≤ 7), we'd still have to add up P(X = 0), <em>P</em>"("<em>X</em> "= 1)", up to <em>P</em>"("<em>X</em> "= 7)." Either way, it becomes readily apparent that answering this question is going to involve more work than the previous two questions. It would clearly be helpful if we had an alternative to using the binomial p.m.f. to calculate binomial probabilities. The alternative typically used involves cumulative binomial probabilities.</p>
+                                            following picture ilustrates, there are two ways that we can calculate 
+                                            <span>
+                                                <em>P</em>
+                                            </span> ( <span>
+                                                <em>X</em>
+                                            </span> > 7):</p>
+                                            <p style="text-align: center;"><img src="./files/lesson10/BinProb_X_morethan_7.gif" alt="More than 7" width="605" height="215"></p>
+                                            <p>We could calculate <span><em>P</em></span>(<span><em>X</em></span> > 7) by adding up <span><em>P</em></span>(<span><em>X</em></span> = 8), <span><em>P</em></span>(<span><em>X</em></span> = 9), up to <span><em>P</em></span>(<span><em>X</em></span> = 15). Alternatively, we could calculate <span><em>P</em></span>(<span><em>X</em></span> > 7) by finding <span><em>P</em></span>(<span><em>X</em></span> ≤ 7) and subtracting it from 1. But to find <span><em>P</em></span>(<span><em>X</em></span> ≤ 7), we'd still have to add up <span><em>P</em></span>(<span><em>X</em></span> = 0), <span><em>P</em></span>(<span><em>X</em></span> = 1), up to <span><em>P</em></span>(<span><em>X</em></span> = 7). Either way, it becomes readily apparent that answering this question is going to involve more work than the previous two questions. It would clearly be helpful if we had an alternative to using the binomial p.m.f. to calculate binomial probabilities. The alternative typically used involves cumulative binomial probabilities.</p>
                                     </div>
                                     <h3>An Aside On Cumulative Probability Distributions</h3>
                                     <table style="width: 95%;" border="4" align="center" bordercolor="#133cac">
