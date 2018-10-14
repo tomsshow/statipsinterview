@@ -92,6 +92,38 @@
                                         </p>
                                         <p style="text-align: left;">That is, there is a 25% chance, in sampling 15 random Americans, that we would find exactly 3 that had no health insurance.</p>
                                     </div>
+                                    <p>
+                                        What is the probability that at most one of the sample has no health insurance?
+                                    </p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p><strong>Solution.</strong>&nbsp;&quot;At most one&quot; means either 0 or 1 of those sampled have no health insurance. That is, we need to find:<p>
+                                        <p style="text-align: center;">
+                                            <span style="white-space: nowrap">
+                                                <em>P</em>"("<em>X&nbsp;</em> "≤ 1)"
+                                            </span>
+                                            " = "
+                                            <span style="white-space: nowrap">
+                                                    <em>P</em>"("<em>X</em> "= 0)"
+                                            </span>
+                                            " + "
+                                            <span style="white-space: nowrap">
+                                                    <em>P</em>"("<em>X&nbsp;</em> "= 1)"
+                                            </span>
+                                            "&nbsp;"
+                                        </p>
+                                        <p>
+                                            Using the probability mass function for a binomial random variable with n = 15 and p = 0.20, we have:   
+                                        </p>
+                                        <p style="text-align: center;"><span style="color: #ff0000;"><span style="color: #000000;">P(X \leq 1)=\dbinom{15}{0}(0.2)^0 (0.8)^{15}+ \dbinom{15}{1}(0.2)^1(0.8)^{14}=0.0352+0.1319=0.167</p>
+                                        <p>That is, we have a 16.7% chance, in sampling 15 random Americans, that we would find at most one that had no health insurance.</p>       
+                                    </div>
+                                    <p>What is the probability that more than seven have no health insurance?</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p><strong>Solution.</strong>&nbsp; Solution. Yikes! &quot;More than seven&quot; in the sample means 8, 9, 10, 11, 12, 13, 14, 15. As the
+                                            following picture ilustrates, there are two ways that we can calculate <em>P</em> "(" <em>X</em> " > 7):"</p>
+                                            <p><strong>PLACE HOLDER IMAGE HERE</strong></p>
+                                            <p>We could calculate P(X > 7) by adding up P(X = 8), P(X = 9), up to P(X = 15). Alternatively, we could calculate P(X > 7) by finding P(X ≤ 7) and subtracting it from 1. But to find P(X ≤ 7), we'd still have to add up P(X = 0), <em>P</em>"("<em>X</em> "= 1)", up to <em>P</em>"("<em>X</em> "= 7)." Either way, it becomes readily apparent that answering this question is going to involve more work than the previous two questions. It would clearly be helpful if we had an alternative to using the binomial p.m.f. to calculate binomial probabilities. The alternative typically used involves cumulative binomial probabilities.</p>
+                                    </div>
                                     <h3>An Aside On Cumulative Probability Distributions</h3>
                                     <table style="width: 95%;" border="4" align="center" bordercolor="#133cac">
                                         <tbody>
@@ -219,7 +251,7 @@
                                     <h3><img style="float: right;" src="./files/lesson10/electricmeter.jpg" alt="electric meter" width="300" height="225">Example</h3>
                                     <p>Many utility companies promote energy conservation by offering discount rates to consumers who keep their energy usage below certain established subsidy standards. A recent EPA report notes that 70% of the island residents of Puerto Rico have reduced their electricity usage sufficiently to qualify for discounted rates. If ten residential subscribers are randomly selected from San Juan, Puerto Rico, what is the probability that at least four qualify for the favorable rates?</p>
                                     <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
-                                        <p><strong>Solution.</strong> If we let <em>X</em> denote the number of subscribers who qualify for favorable rates, then <em>X</em> is a binomial random variable with <em>n</em> = 10 and <em>p</em> = 0.70. And, if we let <em>Y</em> denote the number of subscribers who don't qualify for favorable rates, then <em>Y</em>, which equals <span style="white=space: nowrap;">10 −&nbsp;<em>X</em>,</span> is a binomial random variable with <em>n</em> = 10 and <em>q</em> = <span style="white=space: nowrap;">1 − <em>p</em></span> = 0.30. We are interested in finding <span style="white=space: nowrap;"><em>P</em>(<em>X</em> ≥ 4).</span> We can't use the cumulative binomial tables, because they only go up to <em>p</em> = 0.50. The good news is that we can rewrite&nbsp;<em>P</em>(<em>X</em>&nbsp;≥ 4) as a probability statement in terms of <em>Y</em>:</p>
+                                        <p><strong>Solution.</strong> If we let <em>X</em> denote the number of subscribers who qualify for favorable rates, then <em>X</em> is a binomial random variable with <em>n</em> = 10 and <em>p</em> = 0.70. And, if we let <em>Y</em> denote the number of subscribers who don't qualify for favorable rates, then <em>Y</em>, which equals <span style="white-space: nowrap;">10 −&nbsp;<em>X</em>,</span> is a binomial random variable with <em>n</em> = 10 and <em>q</em> = <span style="white-space: nowrap;">1 − <em>p</em></span> = 0.30. We are interested in finding <span style="white-space: nowrap;"><em>P</em>(<em>X</em> ≥ 4).</span> We can't use the cumulative binomial tables, because they only go up to <em>p</em> = 0.50. The good news is that we can rewrite&nbsp;<em>P</em>(<em>X</em>&nbsp;≥ 4) as a probability statement in terms of <em>Y</em>:</p>
                                         <p style="text-align: center;"><em>P</em>(<em>X</em> ≥ 4) = <em>P</em>(−<em>X</em> ≤ −4) = <em>P</em>(10 − <em>X</em> ≤ 10 − 4) = <em>P</em>(<em>Y</em> ≤ 6)</p>
                                         <p style="text-align: left;">Now it's just a matter of looking up the probability in the right place on our cumulative binomial table.&nbsp;To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>Y</em>&nbsp;≤ 6)</span>, we:&nbsp;</p>
                                         <ol>
