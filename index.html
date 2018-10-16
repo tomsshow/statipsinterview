@@ -31,6 +31,7 @@
     <!--[if IE 8]><link type="text/css" rel="stylesheet" media="all" href="/stat414/sites/all/themes/online_ed2/css/ie8.css" /><![endif]-->
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -96,6 +97,7 @@
                                         What is the probability that at most one of the sample has no health insurance?
                                     </p>
                                     <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+<<<<<<< HEAD
                                             <p><strong>Solution.</strong>&nbsp;Solution. &quot;At most one&quot; means either 0 or 1 of those sampled have no health insurance. That is, we need to find:<p>
                                             <p style="text-align: center;">
                                                 <span style="white-space: nowrap">
@@ -111,6 +113,40 @@
                                                 </span>
                                                 "&nbsp;"
                                             </p>    
+=======
+                                        <p><strong>Solution.</strong>&nbsp;&quot;At most one&quot; means either 0 or 1 of those sampled have no health insurance. That is, we need to find:<p>
+                                        <p style="text-align: center;">
+                                            <span style="white-space: nowrap">
+                                                <em>P</em>(<em>X&nbsp;</em> ≤ 1)
+                                            </span> = 
+                                            <span style="white-space: nowrap">
+                                                    <em>P</em> ( <em>X</em>  = 0)
+                                            </span> + 
+                                            <span style="white-space: nowrap">
+                                                    <em>P</em>(<em>X&nbsp;</em> = 1)
+                                            </span>&nbsp;
+                                        </p>
+                                        <p>
+                                            Using the probability mass function for a binomial random variable with n = 15 and p = 0.20, we have:   
+                                        </p>
+                                        <p style="text-align: center;"><span style="color: #ff0000;"><span style="color: #000000;">\(P(X \leq 1)=\dbinom{15}{0}(0.2)^0 (0.8)^{15}+ \dbinom{15}{1}(0.2)^1(0.8)^{14}=0.0352+0.1319=0.167\)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                                            <br>
+                                            </span>
+                                        </p>
+                                        <p>That is, we have a 16.7% chance, in sampling 15 random Americans, that we would find at most one that had no health insurance.</p>       
+                                    </div>
+                                    <p>What is the probability that more than seven have no health insurance?</p>
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                        <p><strong>Solution.</strong>&nbsp; Solution. Yikes! &quot;More than seven&quot; in the sample means 8, 9, 10, 11, 12, 13, 14, 15. As the
+                                            following picture ilustrates, there are two ways that we can calculate 
+                                            <span>
+                                                <em>P</em>
+                                            </span> ( <span>
+                                                <em>X</em>
+                                            </span> > 7):</p>
+                                            <p style="text-align: center;"><img src="./files/lesson10/BinProb_X_morethan_7.gif" alt="More than 7" width="605" height="215"></p>
+                                            <p>We could calculate <span><em>P</em></span>(<span><em>X</em></span> > 7) by adding up <span><em>P</em></span>(<span><em>X</em></span> = 8), <span><em>P</em></span>(<span><em>X</em></span> = 9), up to <span><em>P</em></span>(<span><em>X</em></span> = 15). Alternatively, we could calculate <span><em>P</em></span>(<span><em>X</em></span> > 7) by finding <span><em>P</em></span>(<span><em>X</em></span> ≤ 7) and subtracting it from 1. But to find <span><em>P</em></span>(<span><em>X</em></span> ≤ 7), we'd still have to add up <span><em>P</em></span>(<span><em>X</em></span> = 0), <span><em>P</em></span>(<span><em>X</em></span> = 1), up to <span><em>P</em></span>(<span><em>X</em></span> = 7). Either way, it becomes readily apparent that answering this question is going to involve more work than the previous two questions. It would clearly be helpful if we had an alternative to using the binomial p.m.f. to calculate binomial probabilities. The alternative typically used involves cumulative binomial probabilities.</p>
+>>>>>>> gh-pages
                                     </div>
                                     <h3>An Aside On Cumulative Probability Distributions</h3>
                                     <table style="width: 95%;" border="4" align="center" bordercolor="#133cac">
@@ -144,20 +180,24 @@
                                     <p>Let's try it out on our health insurance example.</p>
                                     <h3 style="font-size: 1.17em;"><img style="float: right;" src="./files/lesson10/healthinsurance.jpg" alt="medical symbol" width="250" height="250">Example</h3>
                                     <p style="font: 1em/1.4 serif; padding: 12px 4px; margin: 0px;">Again, by some estimates, twenty-percent (20%) of Americans have no health insurance. Randomly sample&nbsp;<em>n</em>&nbsp;= 15 Americans. Let&nbsp;<em>X</em>&nbsp;denote the number in the sample with no health insurance. Use the cumulative binomial probability table in the back of your book to find the probability that&nbsp;<strong>at most 1</strong> of the 15 sampled has no health insurance.</p>
-                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #91b1db;">
                                         <p><strong>Solution.</strong> The probability that at most 1 has no health insurance can be written as <span style="white-space: nowrap;"><em>P</em>(<em>X</em> ≤ 1).</span> To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 1)&nbsp;</span>using the binomial table, we:&nbsp;</p>
                                         <ol>
                                             <li>Find&nbsp;<em><strong>n&nbsp;</strong><strong><span style="font-style: normal;">= 15</span></strong></em>&nbsp;in the first column on the left.</li>
                                             <li>Find the column containing&nbsp;<em><strong>p <span style="font-style: normal;">= 0.20</span></strong></em>.</li>
                                             <li>Find the <strong>1</strong>&nbsp;in the second column on the left, since we want to find <em>F</em>(1) =&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 1).</span></li>
                                         </ol>
+                                        <iframe src="https://h5p.org/h5p/embed/329421" width="1090" height="718" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
+                                        <!--
                                         <p>Now, all we need to do is read the probability value where the <em>p</em> = 0.20 column and the (<em>n</em> = 15, <em>x</em> = 1) row intersect. What do you get?</p>
                                         <p style="text-align: center;"><img src="./files/lesson10/MediumBinomTable_N15P20.gif" alt="Binomial Table with n = 15 p = 0.20" width="300" height="341"></p>
                                         <p style="text-align: center;"><a class="thickbox" title=" " href="./files/lesson10/BinTable_N15P20_AtMost1.gif">Do you need a hint?</a></p>
                                         <p>We've used the cumulative binomial probability table to determine that the probability that at most 1 of the 15 sampled has no health insurance is 0.1671. For kicks, since it wouldn't take a lot of work in this case, you might want to verify that you'd get the same answer using the binomial p.m.f.</p>
+                                        -->
                                     </div>
                                     <p>What is the probability that <strong>more than 7</strong> have no health insurance?</p>
                                     <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #91b1db;">
                                         <p style="text-align: left;"><strong>Solution.</strong>&nbsp;As we determined previously, we can&nbsp;calculate&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;&gt; 7)</span>&nbsp;by finding&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7)&nbsp;</span>and subtracting it from 1:</p>
                                         <p style="text-align: center;"><img src="./files/lesson10/BinProb_X_morethan_7.gif" alt="More than 7" width="605" height="215"></p>
                                         <p>The good news is that the cumulative binomial probability table makes it easy to determine&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7).&nbsp;<span style="white-space: normal;">To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7)&nbsp;</span>using the binomial table, we:&nbsp;</span>
@@ -168,15 +208,19 @@
                                             <li>Find the column containing&nbsp;<em><strong>p&nbsp;<span style="font-style: normal;">= 0.20</span></strong></em>.</li>
                                             <li>Find the&nbsp;<strong>7</strong>&nbsp;in the second column on the left, since we want to find&nbsp;<em>F</em>(7) =&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7).</span></li>
                                         </ol>
+                                        <iframe src="https://h5p.org/h5p/embed/330061" width="1090" height="761" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
+                                        <!--
                                         <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">Now, all we need to do is read the probability value where the&nbsp;<em>p</em>&nbsp;= 0.20 column and the (<em>n</em>&nbsp;= 15,&nbsp;<em>x</em>&nbsp;= 7) row intersect. What do you get?</p>
                                         <p style="text-align: center;"><img src="./files/lesson10/MediumBinomTable_N15P20.gif" alt="Binomial Table with n = 15 p = 0.20" width="300" height="341"></p>
                                         <p style="text-align: center;"><a class="thickbox" title=" " href="./files/lesson10/BinTable_N15P20_AtMost7.gif">Do you need a hint?</a></p>
+                                        -->
                                         <p>The cumulative binomial probability table tells us that&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 7)&nbsp;</span>= 0.9958. Therefore:</p>
                                         <p style="text-align: center;"><em>P</em>(<em>X</em> &gt; 7) = 1 −&nbsp;0.9958 = 0.0042</p>
                                         <p>That is, the probability that&nbsp;more than 7&nbsp;in a random sample of 15 would have no health insurance is 0.0042.</p>
                                     </div>
                                     <p>What is the probability that <strong>exactly 3</strong> have no health insurance?</p>
                                     <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #91b1db;">
                                         <p style="text-align: left;"><strong>Solution.</strong>&nbsp;We can&nbsp;calculate&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;= 3)</span>&nbsp;by finding&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 2)&nbsp;</span>and subtracting it from&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 3)</span>, as illustrated here:</p>
                                         <p style="text-align: center;"><img src="./files/lesson10/BinProbX_Equals_3.gif" alt="Probability exactly 3" width="325" height="186"></p>
                                         <p><span style="line-height: normal;">&nbsp;<span style="line-height: 22px;">To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 2) and&nbsp;<em>P</em>(<em>X</em>&nbsp;≤ 3)&nbsp;<span style="white-space: normal;">using the binomial table, we:&nbsp;</span></span>
@@ -200,7 +244,7 @@
                                         <p style="font: normal normal normal 1em/normal serif; padding-top: 12px; padding-right: 4px; padding-bottom: 12px; padding-left: 4px; line-height: 1.4; margin: 0px;">That is, there is about a 25% chance that&nbsp;exactly 3 people in a random sample of 15 would have no health insurance. Again, for kicks, since it wouldn't take a lot of work in this case, you might want to verify that you'd get the same answer using the binomial p.m.f.</p>
                                     </div>
                                     <p>What is the probability that <strong>at least 1</strong> has no health insurance?</p>
-                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #91b1db;">
                                         <p><strong>Solution.</strong> We can&nbsp;calculate&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≥&nbsp;1)</span>&nbsp;by finding&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 0)&nbsp;</span>and subtracting it from 1, as illustrated here:</p>
                                         <p style="text-align: center;"><img src="./files/lesson10/BinProb_X_AtLeast_1.gif" alt="Probability at least 1" width="463" height="166"></p>
                                         <p><span style="line-height: normal;">&nbsp;<span style="line-height: 22px;">To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 0)&nbsp;</span>using the binomial table, we:&nbsp;</span>
@@ -222,6 +266,7 @@
                                     </div>
                                     <p>What is the probability that <strong>fewer than 5</strong> have no health insurance?</p>
                                     <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #91b1db;">
                                         <p><strong>Solution.</strong>&nbsp;"Fewer than 5" means 0, 1, 2, 3, or 4. That is,&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;&lt; 5)&nbsp;</span>=&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 4)</span>, and&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 4)&nbsp;<span style="white-space: normal;">can be readily found using the cumulative binomial table. To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>X</em>&nbsp;≤ 4)</span>, we:&nbsp;</span>
                                             </span>
                                         </p>
@@ -238,7 +283,11 @@
                                     <p>We have now taken a look at an example involving all of the possible scenarios... <strong>at most </strong><em><strong>x</strong></em>, <strong>more than </strong><em><strong>x</strong></em>, <strong>exactly </strong><em><strong>x</strong></em>, <strong>at least </strong><em><strong>x</strong></em>, and <strong>f</strong><strong>ewer than </strong><em><strong>x</strong></em>... of the kinds of binomial probabilities that you might need to find. Oops! <img title="Surprised" src="./sites/all/libraries/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-surprised/index.gif" border="0" alt="Surprised">&nbsp;Have you noticed that <em>p</em>, the probability of success, in the binomial table in the back of the book only goes up to 0.50. What happens if your <em>p</em> equals 0.60 or 0.70? All you need to do in that case is turn the problem on its head! For example, suppose you have <em>n</em> = 10 and <em>p</em> = 0.60, and you are looking for the probability of at most 3 successes. Just change the definition of a success into a failure, and vice versa! That is, finding the probability of at most 3 successes is equivalent to 7 or more failures with the probability of a failure being 0.40. Shall we make this more concrete by looking at a specific example?</p>
                                     <h3><img style="float: right;" src="./files/lesson10/electricmeter.jpg" alt="electric meter" width="300" height="225">Example</h3>
                                     <p>Many utility companies promote energy conservation by offering discount rates to consumers who keep their energy usage below certain established subsidy standards. A recent EPA report notes that 70% of the island residents of Puerto Rico have reduced their electricity usage sufficiently to qualify for discounted rates. If ten residential subscribers are randomly selected from San Juan, Puerto Rico, what is the probability that at least four qualify for the favorable rates?</p>
+<<<<<<< HEAD
                                     <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #bf9130;">
+=======
+                                    <div style="margin: 30px; padding: 4px; background: none repeat scroll 0pt 50% #91b1db;">
+>>>>>>> gh-pages
                                         <p><strong>Solution.</strong> If we let <em>X</em> denote the number of subscribers who qualify for favorable rates, then <em>X</em> is a binomial random variable with <em>n</em> = 10 and <em>p</em> = 0.70. And, if we let <em>Y</em> denote the number of subscribers who don't qualify for favorable rates, then <em>Y</em>, which equals <span style="white-space: nowrap;">10 −&nbsp;<em>X</em>,</span> is a binomial random variable with <em>n</em> = 10 and <em>q</em> = <span style="white-space: nowrap;">1 − <em>p</em></span> = 0.30. We are interested in finding <span style="white-space: nowrap;"><em>P</em>(<em>X</em> ≥ 4).</span> We can't use the cumulative binomial tables, because they only go up to <em>p</em> = 0.50. The good news is that we can rewrite&nbsp;<em>P</em>(<em>X</em>&nbsp;≥ 4) as a probability statement in terms of <em>Y</em>:</p>
                                         <p style="text-align: center;"><em>P</em>(<em>X</em> ≥ 4) = <em>P</em>(−<em>X</em> ≤ −4) = <em>P</em>(10 − <em>X</em> ≤ 10 − 4) = <em>P</em>(<em>Y</em> ≤ 6)</p>
                                         <p style="text-align: left;">Now it's just a matter of looking up the probability in the right place on our cumulative binomial table.&nbsp;To find&nbsp;<span style="white-space: nowrap;"><em>P</em>(<em>Y</em>&nbsp;≤ 6)</span>, we:&nbsp;</p>
